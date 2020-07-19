@@ -1,0 +1,21 @@
+{
+  "name": "formulasjs",
+  "version": "1.0.0",
+  "description": "A package containing all the required formulas for banking , investment , science , maths and other",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "formulas",
+    "js",
+    "maths",
+    "science",
+    "banking",
+    "investment",
+    "geometry",
+    "algebra"
+  ],
+  "author": "Goutham JM",
+  "license": "MIT"
+}
