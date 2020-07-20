@@ -69,6 +69,29 @@ const shapes = {
       return 4 * a;
     },
   },
+  polygon: {
+    area: function (params = { length: 0, side: 0, radius: 0, inradius: 0 }) {
+      let area;
+      let s = params.hasOwnProperty("length") ? params.length : 0;
+      let n = params.hasOwnProperty("side") ? params.side : 0;
+      let r = params.hasOwnProperty("radius") ? params.radius : 0;
+      let a = params.hasOwnProperty("inradius") ? params.inradius : 0;
+
+      if (s !== 0 && n !== 0) {
+        area = (s * s * n) / (4 * Math.tan(180 / n));
+      } else if (r !== 0 && n !== 0) {
+        area = (r * r * n * Math.sin(360 / n)) / 2;
+      } else if (a !== 0 && n !== 0) {
+        area = a * a * n * Math.tan(180 / n);
+      } else {
+        area = 0;
+      }
+      return Math.abs(area.toFixed(2));
+    },
+    perimeter: function (n = 0, l = 0) {
+      return (n * l).toFixed(2);
+    },
+  },
 };
 
-console.log(shapes.ellipse.perimeter(4, 4));
+// console.log(shapes.polygon.perimeter(6, 6));
