@@ -61,6 +61,14 @@ const shapes = {
       ).toFixed(2);
     },
   },
+  rhombus: {
+    area: function (d1 = 0, d2 = 0) {
+      return ((d1 * d2) / 2).toFixed(2);
+    },
+    perimeter: function (a = 0) {
+      return 4 * a;
+    },
+  },
 };
 
 console.log(shapes.ellipse.perimeter(4, 4));
