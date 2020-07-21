@@ -30,7 +30,21 @@ const solid = {
     volume: function (r = 0) {
       return ((4 / 3) * PI * Math.pow(r, 3)).toFixed(2);
     },
+    curvedSurfaceArea: function (r) {
+      return this.surfaceArea(r);
+    },
+  },
+  hemisphere: {
+    surfaceArea: function (r = 0) {
+      return (2 * PI * r * r).toFixed(2);
+    },
+    volume: function (r = 0) {
+      return ((2 / 3) * PI * Math.pow(r, 3)).toFixed(2);
+    },
+    curvedSurfaceArea: function (r) {
+      return (3 * PI * r * r).toFixed(2);
+    },
   },
 };
 
-// console.log(solid.cuboid.curvedSurfaceArea(-10));
+console.log(solid.sphere.curvedSurfaceArea(-10));
