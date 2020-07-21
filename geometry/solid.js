@@ -56,9 +56,39 @@ const solid = {
       return (Math.round(Math.sqrt(3) / 4) * a * a * h).toFixed(2);
     },
   },
-  pyramid: {},
-  cone: {},
-  cylinder: {},
+  pyramid: {
+    curvedSurfaceArea: function (a = 0, sl = 0) {
+      return ((1 / 2) * (4 * a) * sl).toFixed(2);
+    },
+    surfaceArea: function (a = 0, sl = 0) {
+      return (this.curvedSurfaceArea(a, sl) + a * a).toFixed(2);
+    },
+    volume: function (a = 0, h = 0) {
+      return ((1 / 3) * a * a * h).toFixed(2);
+    },
+  },
+  cone: {
+    curvedSurfaceArea: function (r = 0, l = 0) {
+      return (PI * r * l).toFixed(2);
+    },
+    surfaceArea: function (r = 0, l = 0) {
+      return (PI * r * (l + r)).toFixed(2);
+    },
+    volume: function () {
+      return ((1 / 3) * PI * r * r * h).toFixed(2);
+    },
+  },
+  cylinder: {
+    curvedSurfaceArea: function (r = 0, h = 0) {
+      return (2 * PI * r * h).toFixed(2);
+    },
+    surfaceArea: function (r = 0, h = 0) {
+      return (2 * PI * r * (r + h)).toFixed(2);
+    },
+    volume: function (r = 0, h = 0) {
+      return (PI * r * r * h).toFixed(2);
+    },
+  },
 };
 
 console.log(solid.sphere.curvedSurfaceArea(-10));
