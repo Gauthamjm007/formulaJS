@@ -45,6 +45,10 @@ const solid = {
       return (3 * PI * r * r).toFixed(2);
     },
   },
+  prism: {},
+  pyramid: {},
+  cone: {},
+  cylinder: {},
 };
 
 console.log(solid.sphere.curvedSurfaceArea(-10));
