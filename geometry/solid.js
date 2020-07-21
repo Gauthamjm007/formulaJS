@@ -45,7 +45,17 @@ const solid = {
       return (3 * PI * r * r).toFixed(2);
     },
   },
-  prism: {},
+  prism: {
+    curvedSurfaceArea: function (a = 0, h = 0) {
+      return (a * h * 3).toFixed(2);
+    },
+    surfaceArea: function (a = 0, b = 0, h = 0) {
+      return (this.curvedSurfaceArea(a, b) + 2 * 3 * b).toFixed(2);
+    },
+    volume: function (a = 0, h = 0) {
+      return (Math.round(Math.sqrt(3) / 4) * a * a * h).toFixed(2);
+    },
+  },
   pyramid: {},
   cone: {},
   cylinder: {},
