@@ -33,4 +33,4 @@ const solid = {
   },
 };
 
-console.log(solid.cuboid.curvedSurfaceArea(-10));
+// console.log(solid.cuboid.curvedSurfaceArea(-10));
