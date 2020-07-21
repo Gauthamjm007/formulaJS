@@ -1,3 +1,5 @@
+import { PI } from "../constants";
+
 const shapes = {
   square: {
     area: function (a = 0) {
@@ -17,10 +19,10 @@ const shapes = {
   },
   circle: {
     area: function (r = 0) {
-      return (Math.PI.toFixed(2) * r * r).toFixed(2);
+      return (PI * r * r).toFixed(2);
     },
     circumference: function (r = 0) {
-      return (2 * Math.PI * r).toFixed(2);
+      return (2 * PI * r).toFixed(2);
     },
   },
   triangle: {
@@ -49,12 +51,12 @@ const shapes = {
   },
   ellipse: {
     area: function (r1 = 0, r2 = 0) {
-      return Math.PI.toFixed(2) * r1 * r2;
+      return PI * r1 * r2;
     },
     perimeter: function (r1 = 0, r2 = 0) {
       return (
         2 *
-        Math.PI.toFixed(2) *
+        PI *
         Math.sqrt(
           Math.pow(r1, 2).toFixed(2) + Math.pow(r2, 2).toFixed(2) / 2
         ).toFixed(2)
