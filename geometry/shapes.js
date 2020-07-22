@@ -1,4 +1,4 @@
-import { PI } from "../constants";
+const { PI } = require("../constants");
 
 const shapes = {
   square: {
