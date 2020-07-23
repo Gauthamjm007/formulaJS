@@ -8,5 +8,11 @@ const finance = {
       newAmount: roundTo(interest + p, 2),
     };
   },
-  compoundInterest: function () {},
+  compoundInterest: function (p = 0, t = 0, r = 0) {
+    let newAmount = p * Math.pow(1 + r, t);
+    return {
+      interest: roundTo(newAmount - p, 2),
+      newAmount: roundTo(interest, 2),
+    };
+  },
 };
