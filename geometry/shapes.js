@@ -1,74 +1,77 @@
 const { PI } = require("../constants");
+const { roundTo } = require("../globalFunctions");
 
 const shapes = {
   square: {
     area: function (a = 0) {
-      return a * a;
+      return roundTo(a * a, 2);
     },
     perimeter: function (a = 0) {
-      return 4 * a;
+      return roundTo(4 * a, 2);
     },
   },
   rectangle: {
     area: function (a = 0, b = 0) {
-      return (a * b).toFixed(2);
+      return roundTo(a * b, 2);
     },
     perimeter: function (a = 0, b = 0) {
-      return (2 * (a + b)).toFixed(2);
+      return roundTo(2 * (a + b), 2);
     },
   },
   circle: {
     area: function (r = 0) {
-      return (PI * r * r).toFixed(2);
+      return roundTo(PI * r * r, 2);
     },
     circumference: function (r = 0) {
-      return (2 * PI * r).toFixed(2);
+      return roundTo(2 * PI * r, 2);
     },
   },
   triangle: {
     area: function (b = 0, h = 0) {
-      return ((1 / 2) * b * h).toFixed(2);
+      return roundTo((1 / 2) * b * h, 2);
     },
     perimeter: function (a = 0, b = 0, c = 0) {
-      return (a + b + c).toFixed(2);
+      return roundTo(a + b + c, 2);
     },
   },
   parallelogram: {
     area: function (b = 0, h = 0) {
-      return (b * h).toFixed(2);
+      return roundTo(b * h, 2);
     },
     perimeter: function (b = 0, h = 0) {
-      return (2 * (b + h)).toFixed(2);
+      return roundTo(2 * (b + h), 2);
     },
   },
   trapezoid: {
     area: function (h = 0, b1 = 0, b2 = 0) {
-      return (((b1 + b2) / 2) * h).toFixed(2);
+      return roundTo(((b1 + b2) / 2) * h, 2);
     },
     perimeter: function (a = 0, b = 0, c = 0, d = 0) {
-      return (a + b + c + d).toFixed(2);
+      return roundTo(a + b + c + d, 2);
     },
   },
   ellipse: {
     area: function (r1 = 0, r2 = 0) {
-      return PI * r1 * r2;
+      return roundTo(PI * r1 * r2, 2);
     },
     perimeter: function (r1 = 0, r2 = 0) {
-      return (
+      const perimeter =
         2 *
         PI *
-        Math.sqrt(
-          Math.pow(r1, 2).toFixed(2) + Math.pow(r2, 2).toFixed(2) / 2
-        ).toFixed(2)
-      ).toFixed(2);
+        Number(
+          Math.sqrt(
+            Math.pow(r1, 2).toFixed(2) + Math.pow(r2, 2).toFixed(2) / 2
+          ).toFixed(2)
+        );
+      return roundTo(perimeter, 2);
     },
   },
   rhombus: {
     area: function (d1 = 0, d2 = 0) {
-      return ((d1 * d2) / 2).toFixed(2);
+      return roundTo((d1 * d2) / 2, 2);
     },
     perimeter: function (a = 0) {
-      return 4 * a;
+      return roundTo(4 * a, 2);
     },
   },
   polygon: {
@@ -88,12 +91,10 @@ const shapes = {
       } else {
         area = 0;
       }
-      return Math.abs(area.toFixed(2));
+      return Math.abs(roundTo(area, 2));
     },
     perimeter: function (n = 0, l = 0) {
-      return (n * l).toFixed(2);
+      return roundTo(n * l);
     },
   },
 };
-
-// console.log(shapes.polygon.perimeter(6, 6));
